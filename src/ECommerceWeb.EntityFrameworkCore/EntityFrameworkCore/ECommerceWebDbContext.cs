@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ECommerceWeb.Categories;
+using ECommerceWeb.Products;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -50,6 +53,8 @@ public class ECommerceWebDbContext :
     // Tenant Management
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Category> Categories { get; set; }
 
     #endregion
 
@@ -74,13 +79,26 @@ public class ECommerceWebDbContext :
         builder.ConfigureFeatureManagement();
         builder.ConfigureTenantManagement();
 
-        /* Configure your own tables/entities inside here */
+        builder.Entity<Category>(b =>
+        {
+            b.ToTable(ECommerceWebConsts.DbTablePrefix + "Categories", ECommerceWebConsts.DbSchema);
+            b.ConfigureByConvention(); // ABP'nin standart kolonlarını (Id, CreationTime vb.) otomatik ayarlar
 
-        //builder.Entity<YourEntity>(b =>
-        //{
-        //    b.ToTable(ECommerceWebConsts.DbTablePrefix + "YourEntities", ECommerceWebConsts.DbSchema);
-        //    b.ConfigureByConvention(); //auto configure for the base class props
-        //    //...
-        //});
+            b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+        });
+
+        builder.Entity<Product>(b =>
+        {
+            b.ToTable(ECommerceWebConsts.DbTablePrefix + "Products", ECommerceWebConsts.DbSchema);
+            b.ConfigureByConvention();
+
+            b.Property(x => x.Name).IsRequired().HasMaxLength(256);
+
+            // Bire-Çok (One-to-Many) İlişki Ayarı
+            b.HasOne(x => x.Category)
+             .WithMany(x => x.Products)
+             .HasForeignKey(x => x.CategoryId)
+             .IsRequired();
+        });
     }
 }
