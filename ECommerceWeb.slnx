@@ -1,0 +1,35 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ECommerceWeb.Application.Contracts/ECommerceWeb.Application.Contracts.csproj" />
+    <Project Path="src/ECommerceWeb.Application/ECommerceWeb.Application.csproj" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <Project Path="src/ECommerceWeb.DbMigrator/ECommerceWeb.DbMigrator.csproj" />
+    <Project Path="src/ECommerceWeb.Domain.Shared/ECommerceWeb.Domain.Shared.csproj" />
+    <Project Path="src/ECommerceWeb.Domain/ECommerceWeb.Domain.csproj" />
+    <Project Path="src/ECommerceWeb.EntityFrameworkCore/ECommerceWeb.EntityFrameworkCore.csproj" />
+    <Project Path="src/ECommerceWeb.HttpApi.Client/ECommerceWeb.HttpApi.Client.csproj" />
+    
+    
+    <Project Path="src/ECommerceWeb.HttpApi/ECommerceWeb.HttpApi.csproj" />
+    
+    
+    <Project Path="src/ECommerceWeb.Web/ECommerceWeb.Web.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/ECommerceWeb.Application.Tests/ECommerceWeb.Application.Tests.csproj" />
+    <Project Path="test/ECommerceWeb.Domain.Tests/ECommerceWeb.Domain.Tests.csproj" />
+    <Project Path="test/ECommerceWeb.EntityFrameworkCore.Tests/ECommerceWeb.EntityFrameworkCore.Tests.csproj" />
+    <Project Path="test/ECommerceWeb.HttpApi.Client.ConsoleTestApp/ECommerceWeb.HttpApi.Client.ConsoleTestApp.csproj" />
+    
+    <Project Path="test/ECommerceWeb.TestBase/ECommerceWeb.TestBase.csproj" />
+    <Project Path="test/ECommerceWeb.Web.Tests/ECommerceWeb.Web.Tests.csproj" />
+  </Folder>
+</Solution>

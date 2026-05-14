@@ -1,0 +1,187 @@
+﻿
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Trend Ürünler Türkiye'nin Online Alışveriş Sitesi Trendyol'da</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="~/trendyol-ecoomerce/global.css">
+    <link rel="stylesheet" href="~/trendyol-ecoomerce/style.css">
+
+
+</head>
+<body>
+  <button id="yukariCik" onclick="scrollToTop()">⬆ Yukarı Çık</button>
+    <!--Sayfamızın menü kısmı -->
+    <header>
+        <div class="topbar">
+            <ul>
+                <li>İndirim Kuponlarım </li>
+                <li>Trendyol'da Satış Yap </li>
+                <li>Hakkımızda </li>
+                <li>Yardım & Destek</li>
+            </ul>
+        </div>
+
+        <div class="bottombar">
+            <a href="" class="logo"><img src="~/trendyol-ecoomerce/img/logo.svg" alt=""></a>
+            <form action="">
+                <input type="text" class="form-control search-input" id="formGroupExampleInput" placeholder="Aradığınız ürün, kategori veya markayı yazınız">
+                <button class="search-buton"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="bottom_right_bar">
+                <ul>
+                  <li><i class="fa-solid fa-user"></i><a href="login.html" target="_blank"> Giriş Yap</a></li>
+                  <li><i class="fa-regular fa-heart"></i> Favorilerim</li>
+                  <li><i class="fa-solid fa-cart-shopping"></i> Sepetim</li>
+                </ul>
+            </div>
+        </div>
+
+        <nav>
+            <div class="leftnav">
+              <a href="#">
+                <i class="fa-solid fa-ellipsis-vertical"></i> TÜM KATEGORİLER
+            </a>
+            </div>
+            <div class="rightnav">
+                <ul>
+                    <li>Kadın</li>
+                    <li>Erkek</li>
+                    <li>Anne&Çocuk</li>
+                    <li>Ev&Yaşam</li>
+                    <li>Süpermarket</li>
+                    <li>Kozmetik</li>
+                    <li>Ayakkabı&Çanta</li>
+                    <li>Elektronik</li>
+                    <li>Çok Satanlar</li><i></i>
+                    <li>Flaş Ürünler</li><i></i>
+                </ul>
+            </div>
+        </nav>
+      
+    </header>
+<!-- Menüden hemen sonra gelen resimli semboller kısmı -->
+    <main>
+        @RenderBody()
+    </main>
+
+<div style="background-color: #F5F5F5;" class="footer-container">
+  <div>
+    <h3>
+      Trendyol
+    </h3>
+    <ul>
+      <li><a href="">Biz Kimiz</a></li>
+      <li><a href="">Kariyer</a></li>
+      <li><a href="">Sürdürülebilir</a></li>
+      <li><a href="">İletişim</a></li>
+      <li><a href="">Trendyol'da Güvenlik</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+Kampanyalar
+    </h3>
+    <ul>
+      <li><a href="">Kampanyalar</a></li>
+      <li><a href="">Alışveriş Kredisi</a></li>
+      <li><a href="">Elit Üyelik</a></li>
+      <li><a href="">Hediye Fikirleri</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+Satıcı
+    </h3>
+    <ul>
+      <li><a href="">Trendyol'da Satış Yap</a></li>
+      <li><a href="">Temel Kavramlar</a></li>
+      <li><a href="">Trendyol Akademi</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+Yardım
+    </h3>
+    <ul>
+      <li><a href="">Sıkça Sorulan Sorular</a></li>
+      <li><a href="">Canlı Yardım / Asistan</a></li>
+      <li><a href="">Nasıl İade Edebilirim</a></li>
+      <li><a href="">İşlem Rehberi</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+Ülke Değiştir
+    </h3>
+<button class="country-button">Ülke Seç > </button>
+<h3>Sosyal Medya</h3>
+<div class="social-icons">
+        <a href="https://facebook.com" class="facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" class="instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com" class="youtube" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://twitter.com" class="twitter" target="_blank">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+    </div>
+  </div>
+</div>
+
+<!-- footer bottom -->
+<div class="footer-bottom">
+  <div class="footer-section">
+    <h3>Güvenlik Sertifikası</h3>
+            <div class="left-bottom-footer">
+                <img src="~/trendyol-ecoomerce/img/footer1.webp" alt="">
+                <img src="~/trendyol-ecoomerce/img/footer2.webp" alt="">
+                <img src="~/trendyol-ecoomerce/img/footer3.webp" alt="">
+                <img src="~/trendyol-ecoomerce/img/footer4.webp" alt="">
+    </div>
+  </div>
+  <div class="footer-section">
+    <h3>Güvenli Alışveriş</h3>
+    <div class="center-bottom-container">
+                <img src="~/trendyol-ecoomerce/img/footer5.webp" alt="">
+                <img src="~/trendyol-ecoomerce/img/footer6.webp" alt="">
+                <img src="~/trendyol-ecoomerce/img/footer7.webp" alt="">
+                <img src="~/trendyol-ecoomerce/img/footer8.webp" alt="">
+    </div>
+  </div>
+  <div class="footer-section">
+    <h3>Mobil Uygulamalar</h3>
+    <div class="right-bottom-container">
+                <img src="~/trendyol-ecoomerce/img/footer9.webp" alt="">
+                <img src="~/trendyol-ecoomerce/img/footer10.webp" alt="">
+                <img src="~/trendyol-ecoomerce/img/footer11.webp" alt="">
+    </div>
+  </div>
+</div>
+
+
+<div class="b-container">
+  <div>
+    <footer>&copy; 2025 DSM Grup Danışmanlık İletişim ve Satış Tic. A.Ş. Her Hakkı Saklıdır.</footer>
+  </div>
+  <div class="bb-container">
+    <a href="">Çerez Tercihleri</a>
+    <a href="">KVKK ve Gizlilik Politikası</a>
+    <a href="">DSM Grup</a>
+    <a href="">Kullanım Koşulları</a>
+  </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/trendyol-ecoomerce/script.js"></script>
+</body>
+</html>
+
