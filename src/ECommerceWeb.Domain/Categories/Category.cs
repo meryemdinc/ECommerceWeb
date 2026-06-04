@@ -1,31 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
 
 namespace ECommerceWeb.Categories;
 
-// Kategori ana tablomuz. ABP'nin FullAuditedAggregateRoot sınıfı sayesinde
-// Id, CreationTime, CreatorId, IsDeleted gibi alanlar otomatik eklenecek.
 public class Category : FullAuditedAggregateRoot<Guid>
 {
-    public string Name { get; set; }
+    public string Name { get; private set; } = null!;
+    public string? Description { get; private set; }
+    public bool IsActive { get; private set; } = true;
 
-    public string Description { get; set; }
+    public ICollection<Products.Product> Products { get; private set; }
 
-    // Navigation Property: Bir kategorinin birden fazla ürünü olabilir
-    public ICollection<Products.Product> Products { get; set; }
-
-    // Entity Framework Core'un arka planda çalışabilmesi için boş constructor şarttır
     protected Category()
     {
-    }
-
-    // Kod tarafında nesne üretirken kullanacağımız constructor
-    public Category(Guid id, string name, string description = null)
-        : base(id)
-    {
-        Name = name;
-        Description = description;
         Products = new List<Products.Product>();
     }
+
+    public Category(Guid id, string name, string? description = null)
+        : base(id)
+    {
+        SetName(name);
+        Description = description;
+        Products = new List<Products.Product>();
+        IsActive = true;
+    }
+
+    public void SetName(string name)
+    {
+        Name = Check.NotNullOrWhiteSpace(name, nameof(name), maxLength: 128);
+    }
+
+    public void SetDescription(string? description)
+    {
+        Description = description;
+    }
+
+    public void Activate() => IsActive = true;
+
+    public void Deactivate() => IsActive = false;
 }
